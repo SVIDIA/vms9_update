@@ -1,8 +1,18 @@
 # SVIDIA VMS2020 update channel
 
+
+### SVidia_VMS2020_9_1_23_278
+*Dec 11, 2023*
+- improved performace via redesigned internal codec
+- build on new dotnet 8 LTS platform 
+- removed depemdecies on runtime packaegs from Microsoft
+- updated Camera OD configuration user interface 
+- improved drag-n-drop handling in Story user interface 
+- other performance, security and UI imrovements
+
 ### SVidia_VMS2020_9_0_19_277
 *Nov 09, 2023*
-- fixed: export list item has not been updated after editing
+- fixed: export item has not been updated after editing
 
 ### SVidia_VMS2020_9_0_19_276
 *Nov 02, 2023*
