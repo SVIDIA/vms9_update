@@ -3,12 +3,12 @@
 
 ### SVidia_VMS2020_9_1_23_278
 *Dec 11, 2023*
-- improved performace via redesigned internal codec
+- improved performance via redesigned internal codec
 - build on new dotnet 8 LTS platform 
-- removed depemdecies on runtime packaegs from Microsoft
+- removed dependencies on runtime packages from Microsoft
 - updated Camera OD configuration user interface 
 - improved drag-n-drop handling in Story user interface 
-- other performance, security and UI imrovements
+- other performance, security and UI improvements
 
 ### SVidia_VMS2020_9_0_19_277
 *Nov 09, 2023*
