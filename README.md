@@ -1,6 +1,12 @@
 # SVIDIA VMS2020 update channel
 
 ### SVidia_VMS2020_9_1_23_281
+*Dec 26, 2023*
+- improved UI for video export
+- video export will be resumed if interrupted during download phase 
+- fixed Motion detection mask settings
+
+### SVidia_VMS2020_9_1_23_281
 *Dec 18, 2023*
 - fixed UI appearance when display scaled
 - displaying key frames on TimeLine if zoomed
