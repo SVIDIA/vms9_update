@@ -1,5 +1,10 @@
 # SVIDIA VMS2020 update channel
 
+
+### SVidia_VMS2020_9_1_23_287
+*May 01, 2024*
+- fixed crash while changing some camera settings in NVR configuration 
+
 ### SVidia_VMS2020_9_1_23_286
 *Apr 20, 2024*
 - added QV2M archive feature 
