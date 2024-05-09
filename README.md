@@ -4,7 +4,7 @@
 ### SVidia_VMS2020_9_1_23_289
 *May 09, 2024*
 - fixed bug in NVR configuration when camera has no valid source
-- fixed handling fault frames
+- fixed fault frames handling 
 - fixed set PTZ preset function 
 - fixed crash while changing some camera settings in NVR configuration
 
