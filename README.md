@@ -24,22 +24,16 @@
 
 ### Network Layer
 - Refactored client communication code
-- Improved code organization and maintainability
 
 ### Auto-Update
 - Added error handling and validation for update process
 - Improved update reliability
-
-### Build & Deployment
-- Updated installer configuration
-- Improved code signing scripts
 
 ## Bug Fixes
 
 - **Archive Explorer:** Fixed time selection bugs in archive explorer dialog
 - **Alarm Panel:** Fixed pin drag-and-drop functionality
 - **I/O Tree:** Fixed drag-and-drop into groups
-- **Decoder:** Fixed ConcurrentList and VCompHdr in DecoderCC module
 - **Application:** Fixed graceful application termination issues
 
 
