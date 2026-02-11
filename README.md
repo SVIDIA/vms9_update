@@ -1,5 +1,48 @@
 # SVIDIA VMS2020 update channel
 
+### SVidia_VMS2020_9_1_25_296
+*Feb 10, 2026*
+
+## New Features
+
+### I/O Panel Support for V6 Devices
+- Full I/O panel implementation for V6 hardware
+- New "Assign to Group" dialog for organizing I/O pins
+- Drag-and-drop support for pins into groups
+- Visual indicators for input/output states
+
+### Enhanced Layout Selection
+- Tabbed layout selection organized by aspect ratio
+- Support for well-known display ratios (16:9, 4:3, 21:9, etc.)
+- Improved layout preview and selection experience
+
+## Improvements
+
+### Performance
+- Optimized UI thread update operations for better responsiveness
+- Improved NVR control performance
+
+### Network Layer
+- Refactored client communication code
+- Improved code organization and maintainability
+
+### Auto-Update
+- Added error handling and validation for update process
+- Improved update reliability
+
+### Build & Deployment
+- Updated installer configuration
+- Improved code signing scripts
+
+## Bug Fixes
+
+- **Archive Explorer:** Fixed time selection bugs in archive explorer dialog
+- **Alarm Panel:** Fixed pin drag-and-drop functionality
+- **I/O Tree:** Fixed drag-and-drop into groups
+- **Decoder:** Fixed ConcurrentList and VCompHdr in DecoderCC module
+- **Application:** Fixed graceful application termination issues
+
+
 ### SVidia_VMS2020_9_1_25_292
 *May 30, 2025*
 
