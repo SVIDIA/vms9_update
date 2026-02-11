@@ -46,21 +46,21 @@
 ### SVidia_VMS2020_9_1_25_292
 *May 30, 2025*
 
-## 🔧 Improvements
+## Improvements
 - **New Graphics Refresh Shortcut**: Added Ctrl+Alt+R keyboard shortcut to manually refresh Direct2D graphics display when visual issues occur
 - **Enhanced Graphics Recovery**: Improved automatic recovery mechanisms for DirectX display state problems
 
-## 🐛 Bug Fixes
+## Bug Fixes
 - **Fixed Camera Stream Freezing**: Resolved issue where camera streams would freeze during long-running application sessions due to DirectX display state invalidation errors
 - **Improved Story Image Saving**: Fixed reliability issues when saving images in story functionality with enhanced null checking and request validation
 - **Enhanced Error Handling**: Added comprehensive exception handling for DirectX graphics operations to prevent application crashes
 
-## 🔄 Technical Updates
+## Technical Updates
 - **Deprecated Code Updates**: Updated obsolete HTTP downloader implementation and encryption methods to current standards
 - **Improved Exception Handling**: Enhanced error recovery patterns across all DirectX-related components
 - **Better Logging**: Improved error logging and troubleshooting capabilities for graphics-related issues
 
-## 📁 Components Updated
+## Components Updated
 - Main VMS Application (graphics display, keyboard shortcuts)
 - DirectX Graphics System (display recovery, exception handling) 
 - Client Library (image saving, network operations)
