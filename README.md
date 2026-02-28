@@ -1,5 +1,19 @@
 # SVIDIA VMS2020 update channel
 
+### SVidia_VMS2020_9_1_25_297
+*Feb 28, 2026*
+
+Bug Fixes
+
+  - Fixed crash in NVR Config when switching between cameras with different layout sizes — index-out-of-range error during grid recalculation
+  - Fixed NVR Config settings not saved on camera drag-and-drop; also fixed stale settings displayed after switching server configurations
+  - Fixed app close hang where the main process stayed alive after the window disappeared due to a thread synchronization issue
+  - Fixed NullReferenceException in DirectX rendering (RGBValuesToImage) — race condition where bitmap buffer becomes null during playback export
+
+Improvements
+
+  - Enhanced single-instance check — detects hung/unresponsive previous instances and allows a new launch; brings existing window to foreground when a healthy instance is already running
+
 ### SVidia_VMS2020_9_1_25_296
 *Feb 10, 2026*
 
