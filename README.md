@@ -1,16 +1,51 @@
 # SVIDIA VMS2020 update channel
 
+### SVidia_VMS2020_9_1_25_298
+*Mar 04, 2026*
+
+## New Features
+
+### PTZ Control Toggle in Camera Settings
+- Enable or disable PTZ control per camera directly from the Camera Settings panel
+- Settings panel updates in real-time to reflect the new PTZ state
+
+### Bulk PTZ Control Editing
+- Added PTZ Control enable/disable toggle to the bulk Camera Settings dialog
+- Batch-edit PTZ settings across multiple cameras in a single operation
+- Cameras without PTZ support are automatically skipped
+
+## Improvements
+
+### Application Lifecycle
+- Enhanced single-instance detection: hung or unresponsive instances are now bypassed, allowing a new instance to launch
+- When a healthy instance is already running, its window is brought to the foreground instead of showing an error
+
+### Build & Deployment
+- Updated installer build script and project configuration
+- Code cleanup in timeline playback controls
+
+## Bug Fixes
+
+- **NVR Config:** Fixed crash when switching between cameras with different sizes
+- **NVR Config:** Fixed settings not being saved after drag-and-drop camera rearrangement; fixed stale settings displayed after switching servers
+- **Application:** Fixed close hang where the process remained alive after the window disappeared
+- **Playback:** Fixed crash during bitmap export caused by a race condition in the DirectX rendering pipeline
+- **PTZ Settings:** Fixed state corruption when PTZ protocol enable/disable failed; fixed duplicate event handler and UI freeze during property updates
+- **SpotMonitor:** Fixed crash when closing panels due to stale camera index references
+- **Bulk Settings:** Fixed Apply button being incorrectly enabled on dialog open across Camera, Motion, and Delta tabs
+
+
 ### SVidia_VMS2020_9_1_25_297
 *Feb 28, 2026*
 
-Bug Fixes
+## Bug Fixes
 
   - Fixed crash in NVR Config when switching between cameras with different layout sizes — index-out-of-range error during grid recalculation
   - Fixed NVR Config settings not saved on camera drag-and-drop; also fixed stale settings displayed after switching server configurations
   - Fixed app close hang where the main process stayed alive after the window disappeared due to a thread synchronization issue
   - Fixed NullReferenceException in DirectX rendering (RGBValuesToImage) — race condition where bitmap buffer becomes null during playback export
 
-Improvements
+## Improvements
 
   - Enhanced single-instance check — detects hung/unresponsive previous instances and allows a new launch; brings existing window to foreground when a healthy instance is already running
 
