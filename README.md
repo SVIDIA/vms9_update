@@ -1,6 +1,6 @@
 # SVIDIA VMS2020 update channel
 
-### SVidia_VMS2020_9_1_25_299
+### SVidia_VMS2020_9_1_26_299
 *Jun 25, 2026*
 
 ## New Features
@@ -15,7 +15,7 @@
 - R-CAD alarm-zone events from V6 NVRs surface as timeline markers and seek correctly during playback
 - Hovering a module on the canvas shows its memo text as a tooltip, so long notes are readable without selecting the module (V6 and V9)
 
-### SVidia_VMS2020_9_1_25_298
+### SVidia_VMS2020_9_1_26_298
 *Mar 04, 2026*
 
 ## New Features
@@ -50,7 +50,7 @@
 - **Bulk Settings:** Fixed Apply button being incorrectly enabled on dialog open across Camera, Motion, and Delta tabs
 
 
-### SVidia_VMS2020_9_1_25_297
+### SVidia_VMS2020_9_1_26_297
 *Feb 28, 2026*
 
 ## Bug Fixes
@@ -64,7 +64,7 @@
 
   - Enhanced single-instance check — detects hung/unresponsive previous instances and allows a new launch; brings existing window to foreground when a healthy instance is already running
 
-### SVidia_VMS2020_9_1_25_296
+### SVidia_VMS2020_9_1_26_296
 *Feb 10, 2026*
 
 ## New Features
