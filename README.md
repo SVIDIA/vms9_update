@@ -1,5 +1,20 @@
 # SVIDIA VMS2020 update channel
 
+### SVidia_VMS2020_9_1_25_299
+*Jun 25, 2026*
+
+## New Features
+
+### R-CAD Graphical Editor for V6 NVRs
+- Brought the R-CAD event/automation editor (NVR Configuration → R-Cad) to V6 NVRs — previously available on V9 only
+- Single editor now drives both NVR generations through a capability-flag backend seam, with no change to existing V9 behavior
+- Full editing workflow: read-only graph rendering → property editing → wiring (move / connect / disconnect) → palette add/remove, including external/DLL modules enumerated from the server
+- New property editor types: Date/Time, and File pickers, plus pushed-state button toggles
+- **UserBlock drill-down:** navigate into composite blocks with boundary and repeater terminals rendered, and VClient-style selection breadcrumbs to track your position
+- **Save & persist parity:** per-operation apply with a cooperative server edit lock — the editor drops to read-only when another supervisor holds the lock
+- R-CAD alarm-zone events from V6 NVRs surface as timeline markers and seek correctly during playback
+- Hovering a module on the canvas shows its memo text as a tooltip, so long notes are readable without selecting the module (V6 and V9)
+
 ### SVidia_VMS2020_9_1_25_298
 *Mar 04, 2026*
 
