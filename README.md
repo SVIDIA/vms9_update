@@ -1,5 +1,42 @@
 # SVIDIA VMS2020 update channel
 
+### SVidia_VMS2020_9_1_26_300
+*Jul 05, 2026*
+
+## New Features
+
+### R-CAD Editor for V6 NVRs — Full Editing
+Building on the V6 R-CAD editor introduced in 299, this release brings the remaining advanced-editor capabilities to V6 NVRs, matching the V6 wire protocol:
+- **Clipboard:** Copy / Cut / Paste / Clone modules via the canvas context menu or Ctrl+C/X/V/D, with client-side re-UID and connection remapping replayed to the server
+- **Import / Export:** "Copy to / Paste from file" reads and writes `.rcd` files
+- **Multi-select:** Ctrl+click and Shift+drag marquee selection; the full selection now survives live canvas rebuilds and drives Copy / Cut / Delete on every selected module
+- **Pic scripting:** Run / Compile / Restart Pics from the editor, with a built-in server-side script editor (Pic / Code Unit / Graphics Program) featuring inline Run/Stop and a live debug pane
+- **Live Pic state sync:** a running Pic's server-side self-changes — run/stop color, renamed Pic or pins — now reflect on the canvas in real time
+- **Script password lock:** viewing or editing a locked Pic's script now prompts for its password, matching V6 behavior
+- **"Select Users" picker:** the Select Users pin/device action now opens a proper user-picker dialog and writes the assignment back to the server
+- **Alarm Panel live push:** dynamic `<DPN#>` pin names and active-state changes pushed from the server now refresh the on-canvas Alarm Panel object, the I/O tab pins, and the Alarm Panel view
+- **Pin properties:** pin selection now spreads across the full lower panel, with the owning module's name shown in the breadcrumb (e.g. `External Devices > ADATA > Output > out_2 > Pin settings`)
+- Zoom and pan are now remembered per NVR
+
+## Improvements
+
+### R-CAD (V6 and V9)
+- Smooth, eased mouse-wheel zoom — the view now glides toward the point under the cursor instead of snapping in fixed steps
+- Objects render with their own back/text colors from the server instead of a fixed color scheme
+
+### Camera Trees
+- Camera nodes now combine the server index label with the explicitly-defined name (e.g. `C1 Corridor`), so both are always visible in the NVR tree, the Cameras tree, and group hover-previews
+
+## Bug Fixes
+
+- **R-CAD V6:** Fixed "Set output" not driving alarm-panel output pins (wrong desktop opcode) and inverting the chosen state
+- **R-CAD V6:** Fixed drifted module colors — black text and system-colored backgrounds (e.g. Alarm Panel) no longer fall back to white-on-dark
+- **R-CAD V6:** Fixed multi-selection collapsing to a single module after a live update, which caused Copy / Cut / Delete to act on only one object
+- **I/O Tab:** Fixed crash when right-clicking a V6 inputs/outputs branch
+- **Camera Settings:** Restored the wait-cursor / window-freeze release on a failed camera load, and allowed re-dragging the same camera to retry
+- **Dialogs:** Fixed title text shift
+
+
 ### SVidia_VMS2020_9_1_26_299
 *Jun 25, 2026*
 
