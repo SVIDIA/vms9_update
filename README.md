@@ -1,5 +1,27 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_301
+*Jul 11, 2026*
+
+## New Features
+
+### Events Panel — Image Review & Smarter Filtering
+- **Camera image panel:** a collapsible panel shows the full-resolution archive frame for the selected event, fetched headlessly. Wheel/drag-ROI zoom, detection box, prev/next, save, copy-to-clipboard, and sync-to-archive.
+- **Dynamic value filter:** a dropdown lists distinct values in the current slice (object / attribute / camera) with counts — single-select, case-insensitive, combined with the text search.
+
+## Improvements
+
+### Events Panel
+- **Richer parsing:** the Data column now shows the detected object plus its attributes (vehicle/person color, gender) and ONVIF events that were previously dropped
+- **Type column** now shows the event's detector id
+- **Parsed/raw toggle** moved into an info glyph in the "Data" column header
+- **Server-local event times** — shown in the NVR's own zone
+
+## Bug Fixes
+
+- **Events:** Fixed a time-zone drift when seeking/fetching an event's image on cross-zone NVRs — seek/image time now uses timestamp in the record's own time base
+- **Events:** Deselecting a row no longer throws; the image panel and header clear when the table empties or the row is deselected
+
 ### SVidia_VMS2020_9_1_26_300
 *Jul 05, 2026*
 
