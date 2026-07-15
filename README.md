@@ -1,5 +1,44 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_302
+*Jul 15, 2026*
+
+## New Features
+
+### Event Playback — Configurable Play Window & Event-Only Timelines
+- **Play window ±s:** a spinner in the Add/Remove Events dialog (1–10s, default 5) sets the half-width of the window played around each event. It replaces the "Events play time" toolbar button and its fixed 5/10/20s menu, and the value is remembered across sessions.
+- **Event-only timeline:** with "Play by Events" on, the timeline collapses to just the rows defined in the dialog (NVR Events / Bookmarks / Motion Search) and hides the per-camera rows, restoring them when it is switched off. Off by default and remembered per playback tab.
+
+### Events Panel — Detection Tooltip
+- **Hover tooltip** over the camera image shows the selected event's parsed detection properties — detector, label or plate, the attribute pair, and confidence. It stays out of the way while zoom-dragging, and non-ADATA events yield no tooltip.
+
+### View Tab Tree — Drag a Parent Node to Open Its View
+- Single-child views — Alarm Log, Bookmarks, Events, Export, History, Messages, NVR Configuration, Search Results, Settings and Spot Monitor — can now be opened by dragging either the child node or its parent. Multi-child parents (Live View, Playback, Map, Browser, Story) stay non-draggable, since the view to open would be ambiguous.
+
+### About Dialog
+- **Release notes:** a small info (i) icon next to the version number opens the release notes, mirroring the update dialog's info button
+- **Show Logs** (was "Show Log") now opens the log folder instead of a single per-exe log file
+
+## Improvements
+
+### Events Panel
+- **Auto-reload on event changes:** turning on Show Events or changing the NVR Events checkmarks in the Add/Remove Events dialog now reloads the archive automatically, preserving playback position — no manual Reload. Motion Search and Bookmarks changes only re-filter the loaded timeline, as before.
+- **Parsed/raw toggle keeps its context:** the ⓘ toggle in the "Data" column header no longer clears the search, deselects the row, or blanks the camera image — it re-applies the current filter in place
+- **Data column** label "LPR:" is now "LP:"
+
+### Camera Dialogs
+- The Add New Camera dialog now labels cameras with the same index-plus-name prefix as the NVR tree (e.g. `C4 Corridor`)
+
+## Changes
+
+- **V9 NVR support is temporarily disabled in this build.** Connections probe V6 only, scanner discovery skips the V9 port, and the Group Users / Group Settings / Cam Manager configuration tabs are not built. Export V9 is dropped from the add-page menu, but existing saved layouts containing an Export V9 page still load.
+
+## Bug Fixes
+
+- **Event playback:** Playback no longer jumps backwards behind a clicked position — the window around the first event of a play session is clamped to the requested position, while auto-advancing from event to event keeps the full preroll
+- **Event playback:** Fixed three paths that could leave a hidden timeline row selected, which pointed the status line and play marker at a row with no rectangle
+
+
 ## SVidia_VMS2020_9_1_26_301
 *Jul 11, 2026*
 
