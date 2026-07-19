@@ -1,5 +1,30 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_303
+*Jul 19, 2026*
+
+## New Features
+
+### Playback — Motion Heatmap (Delta Statistics)
+- **Motion heatmap:** right-click a camera in archive mode → **Motion heatmap** opens a dialog that scans the archive and renders where motion occurred, over the same interval Motion Search uses (playhead → last recorded frame on the timeline). Motion is drawn as a blue→red heatmap normalised to the busiest block, and the status bar reports the peak change count and percentage so the scale stays interpretable.
+- **Pause / resume / regenerate:** the scan can be paused and resumed without losing accumulated counts, and cancelled cleanly. Results are cached per (server, camera, interval) and re-shown instead of rescanning; **Regenerate** discards the cache and rescans.
+
+## Improvements
+
+### Camera Source Properties
+- **Long values now wrap:** long server-supplied string properties that were clipped to a single unreadable line now wrap into a taller, compact box that grows to the content and then scrolls — mirroring the Hint field. Short fields (IP, username, URL) keep their normal single-line control. Applies to both the editable "Edit source properties" modal and the read-only display.
+
+## Changes
+
+- **Video codec migrated to svdcodec.** Live decode, archive playback, and the export / download-save YUY2→BGR32 conversion all move off the legacy Intel-toolchain native libraries to the new `svdcodec`.
+- **Logs are now UTF-8.** Log files are written as UTF-8 (no BOM) and gain a `.txt` extension. The stale UTF-16 files (and their `.bak` backups) are deleted automatically on the first start after upgrade.
+
+## Bug Fixes
+
+- **Export crash on high-resolution cameras:** Fixed a destination-stride error in the BGR32 image resizer that corrupted the heap when downscaling, crashing the timelapse and Playback Export paths — most reliably on the 3840×1755 (6.7 MP) camera. Standard ~1080p cameras were rarely affected.
+- **Encoder tab diagnostics restored:** In NVR Configuration → **Encoder**, the changed-block overlay and the running **Frame size** histogram were both blank; they now render again (the overlay in the same bright magenta as the Motion/Alarm tabs).
+
+
 ## SVidia_VMS2020_9_1_26_302
 *Jul 15, 2026*
 
