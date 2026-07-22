@@ -1,5 +1,24 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_304
+*Jul 22, 2026*
+
+## New Features
+
+### Playback — Frame Stepping (V6 archives)
+- **Next / Previous frame:** in archive mode the Next-frame and Previous-frame buttons now step one frame at a time on V6 NVRs.
+
+## Improvements
+
+### Playback — Reverse Playback
+- **Faster play-backward:** a dedicated faster reverse-play button in archive mode for quicker review when scrubbing backwards.
+
+## Bug Fixes
+
+- **Green band along the bottom of some cameras:** Some cameras showed a thin green strip across the very bottom of live and playback images after the recent codec migration. The decoder now seeds its working frame correctly. 
+- **Crash when changing camera Quality:** Changing a camera's Quality setting could crash the application. Decoding and decoder teardown are now serialized, so the change applies cleanly.
+
+
 ## SVidia_VMS2020_9_1_26_303
 *Jul 19, 2026*
 
