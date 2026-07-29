@@ -1,5 +1,38 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_305
+*Jul 29, 2026*
+
+## New Features
+
+### NVR Connections — Time Zone & Settings While Enrolling
+- **NVR time zone:** the Add / Edit NVR dialog gains an **NVR time zone** selector. Legacy NVRs report only their current offset from UTC, which is not enough to convert times that fall on the other side of a daylight-saving change; naming the NVR's zone makes those conversions exact. Left on **Auto**, the client infers the zone only when the NVR is in this PC's own zone and otherwise keeps the previous behaviour, so nothing changes until a zone is set.
+- **Camera settings available when adding an NVR:** the Resolution / FPS / Quality / Time zone dropdowns are now shown while enrolling a new NVR.
+
+### Extended NVR Capabilities — 32 Cameras and 8K
+- **Up to 32 cameras per NVR** on server builds that support it. The camera trees, live and playback grids, PTZ, QuickView and the monitor-status feed all follow the connection's real camera count.
+- **Frames up to 7680×4320 (8K).** Native-resolution stills and streams above the previous ceiling now decode instead of being rejected, and the decoder releases the memory again when a stream drops back to HD.
+- **Camera access for cameras 17–32:** the Users dialog reads and writes view / sound grants for all 32 cameras, along with the full permission set, over the NVR's canonical user protocol.
+- These are negotiated per connection and only when the NVR advertises them. Against existing NVRs the client behaves exactly as before.
+
+## Improvements
+
+### Events Panel
+- **Camera image panel restyled** to match the archive view — the same dark button bar, 36×36 icon buttons and hover behavior, with the camera name, frame time and time difference moved to their own label row directly beneath the bar.
+
+### Users & Roles — Permission Grids
+- **Fixed permissions now read as fixed.** Permission and camera-access cells that cannot be changed — a supervisor's camera access, or a permission the NVR does not support — were drawn as ordinary checkboxes, so the only way to discover they were locked was to click one. They now render as a plain tick (granted), a dash (partially granted) or nothing at all (not granted).
+- The **select-all header checkbox** is dropped from columns whose cells are all fixed, since it could not change anything.
+
+## Bug Fixes
+
+- **Detection boxes landing away from the object, differently on each PC:** the same event, camera and recording could put the detection box on the moving object on one machine and feet away on another. The box was never misplaced — each client was resolving a *different archive frame*, because time conversions ran off a clock measurement taken at connect, which carries the PC's own clock error and network round-trip noise in addition to the time-zone difference. Conversions now use the NVR's reported time-zone offset, re-evaluated as the session runs, so every client resolves the same frame regardless of how accurate its own clock is. This affects all archive time handling — timeline seek, export and download ranges, motion search, event seek and the live overlay clock — not only detection boxes.
+- **Times across a daylight-saving boundary were an hour out:** viewing a January recording in July (or vice versa) converted with the current offset rather than the offset in force at that moment. With an NVR time zone configured, both ends are now evaluated at the instant being converted.
+- **Instant replay** now anchors "the last N seconds" on the NVR's clock rather than the local PC's, so a PC whose clock is off no longer replays the wrong window.
+- **Dialog titles fixed:** dialogs captions now span the title bar and stay vertically centered.
+- **Time conversion performance:** the corrected conversions are called from timeline are computed at most once a second and reused. Connections in the PC's own zone — the common case — pay essentially nothing, and a live change to the NVR's reported offset or configured zone still takes effect immediately.
+
+
 ## SVidia_VMS2020_9_1_26_304
 *Jul 22, 2026*
 
