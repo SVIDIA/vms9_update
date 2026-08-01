@@ -1,5 +1,40 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_306
+*Jul 30, 2026*
+
+## New Features
+
+### The NVR Now Tells the Client Its Time Zone
+- **NVR time zone reported by the server.** Where 9.1.26.305 needed the zone to be named by hand — legacy NVRs report only their current offset from UTC, which cannot place a timestamp from the other side of a daylight-saving change — a capable NVR now states its own zone, rules and all. **Auto** stops being an inference: archive times, timeline seek, export and download ranges, motion search and event times convert exactly across a DST boundary with nothing to configure.
+- The per-NVR **NVR time zone** setting still wins when it is set. It remains the escape hatch for a server whose own clock configuration is wrong, and overriding it with a value from the machine being corrected for would make it useless.
+- The **Auto** entry now names the zone it actually resolved to for that NVR, instead of describing the rule it uses to pick one.
+
+### License Status on the NVR Info Panels
+- The **NVR Info** box and the hover **preview panel** gain a license block: status, channels in use against channels licensed, serial number (and whether it is bound to that hardware) and expiry date.
+- A licence that is not valid — expiring, expired, or over its channel count — is also raised in the system-messages list rather than sitting quietly in a panel nobody has open.
+- Supervisor sign-in only, and only on NVRs that report a license at all.
+
+### Time Zone and Clock Health at a Glance
+- Both the **NVR Info** box and the hover **preview panel** gain **Timezone** and **Time diff** rows, plus a line stating how the zone was established — reported by the server, configured for this NVR, inferred, or offset-only. Only the first two convert exactly across a daylight-saving change; the line says which one you have.
+- A **Clock skew** row appears, in red, only when the NVR's clock is genuinely wrong — more than a minute out — as opposed to simply sitting in another time zone. This is a separate fault from a zone gap, it quietly shifts every archive seek, and it was previously invisible everywhere in the client.
+- Both panels now measure their content and grow to fit it. They were fixed-size and silently cut off anything that ran past the edge, so the licence and time-zone rows would not have been readable on either.
+
+### System Messages Carry a Real Severity
+- Status messages from the NVR now arrive with a severity attached. Anything critical — an imminent license expiry, for instance — is filed as an exception rather than sharing one flat channel with routine operator chatter. License changes prompt the client to re-read the licence from the server rather than guess at the new state.
+
+### Extended Capabilities — One Handshake
+- The 32-camera, 8K and full-permission support introduced in 9.1.26.305 is now negotiated through the NVR's single extended-capability handshake. The features themselves are unchanged; they require a server build that offers the new handshake.
+
+*All of the above appear only when the NVR reports them. Against existing NVRs the client behaves exactly as before.*
+
+## Bug Fixes
+
+- **Archive shown as hours old when it was recording right now.** The "ago" line under *Archive from* / *Archive to* was measured against this PC's clock, while the timestamps themselves are the NVR's own wall clock — so the whole time-zone gap was charged as age. On an NVR ten hours behind, an archive whose end *is* the present moment read "10.0 hours ago". Both ends are now converted before the subtraction, and the timestamp itself is labelled **NVR time**, staying server-local so it continues to match the timeline and the NVR's own logs.
+- **"43.2166666666667 mins ago".** The minutes form of the age text printed at full precision. It now reads one decimal place, like the hours and days forms beside it. (It had never been seen before, because the time-zone error above always pushed the result into the hours branch.)
+- **Daylight-saving indicator beside the NVR offset could be wrong for hours after a clock change.** It was evaluated at the wrong instant and applied the offset a second time, so an NVR an hour into a spring-forward could be marked incorrectly for the rest of the day. The client now prefers the server's own daylight-saving flag, captured together with the offset printed next to it, so the two cannot contradict each other. Reported by the CamManager client team.
+
+
 ## SVidia_VMS2020_9_1_26_305
 *Jul 29, 2026*
 
