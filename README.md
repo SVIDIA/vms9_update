@@ -1,5 +1,12 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_307
+*Aug 4, 2026*
+
+## Bug Fixes
+
+- **Cameras could not be added to an R-CAD scheme.** The R-CAD editor released in 9.1.26.300/301 offered every element type except the camera: a scheme kept showing and running the camera blocks it already had, but no new one could be placed. Cameras are now their own category in *Add New Device*, listed by number and name and limited to those not already on the scheme — one block per camera, as the NVR requires. On an NVR whose firmware cannot create camera blocks, the client now says so and leaves the scheme untouched instead of adding an empty one.
+
 ## SVidia_VMS2020_9_1_26_306
 *Jul 30, 2026*
 
