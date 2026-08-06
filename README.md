@@ -1,5 +1,17 @@
 # SVIDIA VMS2020 update channel
 
+## SVidia_VMS2020_9_1_26_308
+*Aug 6, 2026*
+
+## New Features
+
+### Export the Events Table to a Spreadsheet
+- A new button in the **Events** view's camera-image bar saves the events you are looking at to a **CSV file**. The search text and the value filter currently applied are respected, so the file holds exactly the rows on screen, in the same order — not the whole unfiltered load.
+- Each row carries the full date and time (the table itself omits the year to fit the column), the event type and data, the camera number *and* its name, and which NVR it came from. The last two matter as soon as one view is showing events merged from several servers, where the table can only show a bare camera number.
+- The ⓘ toggle over the *Data* column still decides what that column contains, so exporting with it on gives the full raw event payload and with it off the friendly one-line reading.
+- The file opens straight into Excel, non-English camera names, labels and plate text included. The button is available whether or not the camera image is showing.
+
+
 ## SVidia_VMS2020_9_1_26_307
 *Aug 4, 2026*
 
