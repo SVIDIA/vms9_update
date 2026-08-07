@@ -6,6 +6,7 @@
 ## Bug Fixes
 
 - **The Alarm Zones tab could be missing from NVR Configuration.** The tab was only ever brought out when picking something in the NVR or Camera tree. Which tabs belong on screen is now settled when the view is built and checked again every time NVR Configuration is opened, so Alarm Zones is simply always there.
+- **Creating a custom layout could close the client.** A damaged layouts file — which an earlier crash could produce on its own — left the Layout Editor with an error and nothing to add to, so the client ended the moment a new layout was created. It now recovers from an unreadable file by itself, and layouts made in Live View, Zoom View and Spot Monitor are saved, which they previously were not.
 
 
 ## SVidia_VMS2020_9_1_26_308
