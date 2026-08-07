@@ -5,7 +5,7 @@
 
 ## Bug Fixes
 
-- **The Alarm Zones tab could be missing from NVR Configuration.** The tab was only ever brought out as a side effect of picking something in the NVR or Camera tree, so whether it appeared came down to timing. If the tree settled on its selection before the configuration view had finished opening — or if that view was quietly rebuilt once a supervisor sign-in completed — there was nothing left to put the tab back, and the rest of the session ran without it. The familiar workaround of clicking another NVR in the tree and back again worked only when the selection genuinely changed, and in the **Camera** tree it did nothing at all unless the node picked was a camera, which is why it so often failed. Which tabs belong on screen is now settled when the view is built and checked again every time NVR Configuration is opened, so Alarm Zones is simply always there.
+- **The Alarm Zones tab could be missing from NVR Configuration.** The tab was only ever brought out when picking something in the NVR or Camera tree. Which tabs belong on screen is now settled when the view is built and checked again every time NVR Configuration is opened, so Alarm Zones is simply always there.
 
 
 ## SVidia_VMS2020_9_1_26_308
